@@ -1,0 +1,33 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Press Start 2P', cursive;
+}
+
+body {
+  background: #000;
+  color: #fff;
+}
+
+.container {
+  max-width: 1040px;
+  margin: 0 auto;
+}
+
+.title {
+  font-size: 24px;
+  text-align: center;
+  padding: 50px 20px 60px 20px;
+  line-height: 34px;
+}
+
+.link {
+  box-shadow: none;
+  text-decoration: none;
+  color: inherit;
+}
+
+@media(max-width: 780px) {
+  .title { padding: 70px 20px 60px 20px; }
+}

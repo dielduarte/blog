@@ -1,0 +1,20 @@
+.container {
+  display: flex;
+  justify-items: center;
+  align-items: center;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: #fff;
+  position: fixed;
+  right: 30px;
+  bottom: 30px;
+}
+
+.image {
+  border-radius: 50%;
+}
+
+@media(max-width: 1040px) {
+  .container { display: none; }
+}

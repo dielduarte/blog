@@ -1,0 +1,16 @@
+.button {
+  font-size: 18px;
+  color: #fff;
+  background: transparent;
+  border: none;
+  margin-top: 20px;
+  text-decoration: none;
+  display: block;
+  position: absolute;
+}
+
+@media(max-width: 1040px) {
+  .button {
+    padding-left: 12px;
+  }
+}
