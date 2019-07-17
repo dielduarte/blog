@@ -2,7 +2,6 @@ import React from "react"
 import { Link } from "gatsby"
 
 import BackButton from "./BackButton"
-import FloatingAvatar from "./FloatingAvatar"
 
 import styles from "./layout.module.css"
 
@@ -23,7 +22,6 @@ class Layout extends React.Component {
           </h1>
         </header>
         <main>{children}</main>
-        <FloatingAvatar />
       </div>
     )
   }

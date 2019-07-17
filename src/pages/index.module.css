@@ -13,6 +13,7 @@
   position: relative;
   color: #fff;
   margin-bottom: 20px;
+  min-height: 143px;
 }
 
 .post:hover {
