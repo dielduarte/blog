@@ -1,8 +1,13 @@
-.content { padding-bottom: 60px; }
+.content { 
+  padding-bottom: 60px; 
+  max-width: 768px;
+  margin: 0 auto;
+}
 
 .content * {
   font-family: 'Roboto', sans-serif;
-  line-height: 1.4;
+  font-size: 18px;
+  line-height: 1.58em;
 }
 
 .content p {
