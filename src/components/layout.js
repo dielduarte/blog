@@ -13,7 +13,9 @@ class Layout extends React.Component {
 
     return (
       <div className={styles.container}>
-        <BackButton to={"/"} />
+        {!isRootPath && (
+          <BackButton to={"/"} />
+        )}
         <header>
           <h1 className={styles.title}>
             <Link className={styles.link} to={`/`}>

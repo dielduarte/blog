@@ -28,7 +28,7 @@
 
 .description {
   font-family: 'Roboto', sans-serif;
-  font-size: 13px;
+  font-size: 14px;
 }
 
 .date {
@@ -36,6 +36,7 @@
   position: absolute;
   bottom: 10px;
   right: 20px;
+  padding: 4px;
 }
 
 @media(max-width: 1040px) {

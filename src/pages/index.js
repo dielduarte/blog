@@ -5,15 +5,17 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 
 import styles from "./index.module.css"
+import getRandomBg from "../utils/getRandomBg"
 
 class BlogIndex extends React.Component {
   render() {
     const { data } = this.props
-    const siteTitle = data.site.siteMetadata.title
+    const { title, siteUrl } = data.site.siteMetadata
+
     const posts = data.allMarkdownRemark.edges
 
     return (
-      <Layout location={this.props.location} title={siteTitle}>
+      <Layout location={this.props.location} title={title} siteUrl={siteUrl}>
         <SEO title="All posts" />
         <section className={styles.posts}>
           {posts.map(({ node }) => {
@@ -28,7 +30,12 @@ class BlogIndex extends React.Component {
                     }}
                     className={styles.description}
                   />
-                  <small className={styles.date}>{node.frontmatter.date}</small>
+                  <small
+                    className={styles.date}
+                    style={{ backgroundColor: getRandomBg() }}
+                  >
+                    {node.frontmatter.date}
+                  </small>
                 </article>
               </Link>
             )
