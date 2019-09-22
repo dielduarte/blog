@@ -1,10 +1,6 @@
 import React from "react"
 import { graphql } from "gatsby"
 import styles from "./blog-post.module.css"
-import "highlight.js/styles/default.css"
-import "highlight.js/styles/androidstudio.css"
-import hljs from "highlight.js/lib/highlight"
-import javascript from "highlight.js/lib/languages/javascript"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
@@ -25,11 +21,6 @@ class BlogPostTemplate extends React.Component {
         />
       </Layout>
     )
-  }
-
-  componentDidMount() {
-    hljs.registerLanguage("javascript", javascript)
-    hljs.initHighlighting()
   }
 }
 
