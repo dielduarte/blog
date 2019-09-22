@@ -13,7 +13,7 @@
   position: relative;
   color: #fff;
   margin-bottom: 20px;
-  min-height: 143px;
+  min-height: 180px;
 }
 
 .post:hover {
@@ -24,11 +24,13 @@
   text-decoration: none;
   font-size: 13px;
   margin-bottom: 20px;
+  line-height: 1.9em;
 }
 
 .description {
   font-family: 'Roboto', sans-serif;
   font-size: 14px;
+  line-height: 1.5em;
 }
 
 .date {

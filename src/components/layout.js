@@ -1,5 +1,4 @@
 import React from "react"
-import { Link } from "gatsby"
 
 import BackButton from "./BackButton"
 
@@ -13,14 +12,13 @@ class Layout extends React.Component {
 
     return (
       <div className={styles.container}>
-        {!isRootPath && (
-          <BackButton to={"/"} />
-        )}
+        <BackButton
+          to={isRootPath ? "http://dielduarte.github.io" : "/"}
+          isExternal={isRootPath}
+        />
         <header>
           <h1 className={styles.title}>
-            <Link className={styles.link} to={`/`}>
-              {isRootPath ? "Welcome to my blog!" : title}
-            </Link>
+            {isRootPath ? "Welcome to my blog!" : title}
           </h1>
         </header>
         <main>{children}</main>

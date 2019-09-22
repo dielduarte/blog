@@ -11,14 +11,14 @@ body {
 }
 
 .container {
-  max-width: 1040px;
+  max-width: 780px;
   margin: 0 auto;
 }
 
 .title {
   font-size: 24px;
   text-align: center;
-  padding: 50px 20px 60px 20px;
+  padding: 50px 20px 30px 20px;
   line-height: 34px;
 }
 

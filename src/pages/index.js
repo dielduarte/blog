@@ -5,7 +5,6 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 
 import styles from "./index.module.css"
-import getRandomBg from "../utils/getRandomBg"
 
 class BlogIndex extends React.Component {
   render() {
@@ -21,7 +20,7 @@ class BlogIndex extends React.Component {
           {posts.map(({ node }) => {
             const title = node.frontmatter.title || node.fields.slug
             return (
-              <Link to={node.fields.slug} className={styles.post}>
+              <Link to={node.fields.slug} className={styles.post} title="title">
                 <article key={node.fields.slug}>
                   <h3 className={styles.title}>{title}</h3>
                   <p
@@ -30,12 +29,6 @@ class BlogIndex extends React.Component {
                     }}
                     className={styles.description}
                   />
-                  <small
-                    className={styles.date}
-                    style={{ backgroundColor: getRandomBg() }}
-                  >
-                    {node.frontmatter.date}
-                  </small>
                 </article>
               </Link>
             )
