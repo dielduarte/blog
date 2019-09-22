@@ -64,10 +64,9 @@ module.exports = {
         background_color: `#000`,
         theme_color: `#fff`,
         display: `minimal-ui`,
-        icon: `static/images/avatar.png`
+        icon: `static/images/avatar.png`,
       },
     },
-    `gatsby-plugin-offline`,
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-plugin-prefetch-google-fonts`,
