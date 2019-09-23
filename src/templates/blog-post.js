@@ -8,6 +8,7 @@ import SEO from "../components/seo"
 class BlogPostTemplate extends React.Component {
   render() {
     const post = this.props.data.markdownRemark
+    console.log(post, " <<<<<")
 
     return (
       <Layout location={this.props.location} title={post.frontmatter.title}>
