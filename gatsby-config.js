@@ -80,6 +80,10 @@ module.exports = {
             family: `Roboto`,
             subsets: [`latin`],
           },
+          {
+            family: `Fira Code`,
+            subsets: [`latin`],
+          },
         ],
       },
     },
