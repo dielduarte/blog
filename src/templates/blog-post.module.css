@@ -48,6 +48,16 @@
   border-radius: 4px;
 }
 
+:global .language-js {
+  /* important used here to override prims.js styles */
+  font-family: 'Fira Code', monospace !important;
+}
+
+:global .language-js span {
+  /* important used here to override prims.js styles */
+  font-family: 'Fira Code', monospace !important;
+}
+
 .content a {
   display: inline-block;
   color: rgb(215, 136, 56);
