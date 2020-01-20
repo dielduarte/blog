@@ -5,7 +5,9 @@
 }
 
 .post {
-  width: 32%;
+  min-width: 32%;
+  max-width: calc(50% - 20px);
+  margin-right: 20px;
   background-color: #404447;
   padding: 20px 20px 30px 20px;
   box-shadow: none;
@@ -54,6 +56,7 @@
 
   .post {
     display: block;
-    width: 100%;
+    max-width: 100%;
+    margin-right: 0;
   }
 }

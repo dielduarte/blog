@@ -17,10 +17,15 @@ class BlogIndex extends React.Component {
       <Layout location={this.props.location} title={title} siteUrl={siteUrl}>
         <SEO title="All posts" />
         <section className={styles.posts}>
-          {posts.map(({ node }) => {
+          {posts.map(({ node }, index) => {
             const title = node.frontmatter.title || node.fields.slug
             return (
-              <Link to={node.fields.slug} className={styles.post} title="title">
+              <Link
+                to={node.fields.slug}
+                className={styles.post}
+                title="title"
+                key={index}
+              >
                 <article key={node.fields.slug}>
                   <h3 className={styles.title}>{title}</h3>
                   <p
