@@ -2,6 +2,7 @@
 title: Mastering code splitting with webpack
 date: "2019-07-17"
 description: let's talk about how Webpack can help us to code splitting and achieve the goal of better website performance.
+languageKey: en
 ---
 
 code splitting is a build time process that splits pieces of your code into async chunks, let's talk about how Webpack can help us to code split and achieve the goal of better website performance.

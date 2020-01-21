@@ -7,10 +7,15 @@ import SEO from "../components/seo"
 
 class BlogPostTemplate extends React.Component {
   render() {
-    const post = this.props.data.markdownRemark
+    const { markdownRemark: post, site } = this.props.data
+    const config = site.siteMetadata[post.frontmatter.languageKey]
 
     return (
-      <Layout location={this.props.location} title={post.frontmatter.title}>
+      <Layout
+        location={this.props.location}
+        title={post.frontmatter.title}
+        config={config}
+      >
         <SEO
           title={post.frontmatter.title}
           description={post.frontmatter.description || post.excerpt}
@@ -33,6 +38,14 @@ export const pageQuery = graphql`
         title
         author
         siteUrl
+        pt_br {
+          rootPath
+          title
+        }
+        en {
+          rootPath
+          title
+        }
       }
     }
     markdownRemark(fields: { slug: { eq: $slug } }) {
@@ -43,6 +56,7 @@ export const pageQuery = graphql`
         title
         date(formatString: "MMMM DD, YYYY")
         description
+        languageKey
       }
     }
   }

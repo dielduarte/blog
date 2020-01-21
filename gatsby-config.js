@@ -8,6 +8,14 @@ module.exports = {
     social: {
       twitter: `@diel_duarte`,
     },
+    pt_br: {
+      rootPath: "/pt-br",
+      title: "Bem vindo ao meu blog!",
+    },
+    en: {
+      rootPath: "/",
+      title: "Welcome to my blog!",
+    },
   },
   plugins: [
     {

@@ -6,20 +6,17 @@ import styles from "./layout.module.css"
 
 class Layout extends React.Component {
   render() {
-    const { location, title, children } = this.props
-    const rootPath = `${__PATH_PREFIX__}/`
-    const isRootPath = location.pathname === rootPath
+    const { location, title, children, config, siteUrl } = this.props
+    const isRootPath = location.pathname === config.rootPath
 
     return (
       <div className={styles.container}>
         <BackButton
-          to={isRootPath ? "http://dielduarte.github.io" : "/"}
+          to={isRootPath ? siteUrl : config.rootPath}
           isExternal={isRootPath}
         />
         <header>
-          <h1 className={styles.title}>
-            {isRootPath ? "Welcome to my blog!" : title}
-          </h1>
+          <h1 className={styles.title}>{isRootPath ? config.title : title}</h1>
         </header>
         <main>{children}</main>
       </div>
