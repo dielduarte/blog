@@ -6,7 +6,7 @@ export const pageQuery = graphql`
       siteMetadata {
         title
         siteUrl
-        config: en {
+        config: pt_br {
           rootPath
           title
         }
@@ -14,7 +14,7 @@ export const pageQuery = graphql`
     }
     allMarkdownRemark(
       sort: { fields: [frontmatter___date], order: DESC }
-      filter: { fileAbsolutePath: { regex: "//en/" } }
+      filter: { fileAbsolutePath: { regex: "//pt-br/" } }
     ) {
       edges {
         node {
