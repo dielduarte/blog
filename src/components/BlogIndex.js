@@ -1,6 +1,7 @@
 import React from "react"
 
 import PostList from "./PostList"
+import Layout from "./layout"
 
 class BlogIndex extends React.Component {
   render() {
@@ -8,13 +9,15 @@ class BlogIndex extends React.Component {
     const { title, siteUrl, config } = data.site.siteMetadata
 
     return (
-      <PostList
-        posts={data.allMarkdownRemark.edges}
-        location={location}
-        title={title}
-        siteUrl={siteUrl}
-        config={config}
-      />
+      <Layout location={location} title={title} siteUrl={siteUrl} config={config}>
+        <PostList
+          posts={data.allMarkdownRemark.edges}
+          location={location}
+          title={title}
+          siteUrl={siteUrl}
+          config={config}
+        />
+      </Layout>
     )
   }
 }

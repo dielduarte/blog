@@ -1,14 +1,13 @@
 import React from "react"
 import { Link } from "gatsby"
 
-import Layout from "../components/layout"
 import SEO from "../components/seo"
 
 import styles from "./PostList.module.css"
 
 function PostList({ location, title, siteUrl, posts, config }) {
   return (
-    <Layout location={location} title={title} siteUrl={siteUrl} config={config}>
+    <>
       <SEO title="All posts" />
       <section className={styles.posts}>
         {posts.map(({ node }, index) => {
@@ -33,7 +32,7 @@ function PostList({ location, title, siteUrl, posts, config }) {
           )
         })}
       </section>
-    </Layout>
+    </>
   )
 }
 

@@ -3,6 +3,7 @@ title: Um ano trabalhando remoto
 date: "2020-01-20"
 description: Working remotely has been one of the best decisions that I have made up to this point. I hope you can learn something from my experience.
 languageKey: pt_br
+languageLink: en/a-year-working-remotely
 ---
 
 Working remotely has been one of the best decisions that I have made up to this point. I hope you can learn something from my experience.

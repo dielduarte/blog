@@ -7,7 +7,7 @@ import FloatMenu from "./FloatMenu"
 
 class Layout extends React.Component {
   render() {
-    const { location, title, children, config, siteUrl } = this.props
+    const { location, title, children, config, siteUrl, languageLink } = this.props
     const isRootPath = location.pathname === config.rootPath
 
     return (
@@ -23,7 +23,11 @@ class Layout extends React.Component {
         </header>
         <main>{children}</main>
 
-        <FloatMenu />
+        <FloatMenu
+          location={location.pathname}
+          isRootPath={isRootPath}
+          languageLink={languageLink}
+        />
       </div>
     )
   }

@@ -15,6 +15,7 @@ class BlogPostTemplate extends React.Component {
         location={this.props.location}
         title={post.frontmatter.title}
         config={config}
+        languageLink={post.frontmatter.languageLink}
       >
         <SEO
           title={post.frontmatter.title}
@@ -57,6 +58,7 @@ export const pageQuery = graphql`
         date(formatString: "MMMM DD, YYYY")
         description
         languageKey
+        languageLink
       }
     }
   }

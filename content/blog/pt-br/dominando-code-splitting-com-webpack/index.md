@@ -1,9 +1,9 @@
 ---
-title: Mastering code splitting with webpack
+title: Dominando code splitting com webpack
 date: "2019-07-17"
 description: let's talk about how Webpack can help us to code splitting and achieve the goal of better website performance.
 languageKey: en
-languageLink: pt-br/dominando-code-splitting-com-webpack
+languageLink: en/mastering-code-splitting-with-webpack
 ---
 
 code splitting is a build time process that splits pieces of your code into async chunks, let's talk about how Webpack can help us to code split and achieve the goal of better website performance.
