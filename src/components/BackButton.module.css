@@ -6,6 +6,13 @@
   margin-top: 20px;
   text-decoration: none;
   display: block;
+  position: relative;
+  transition: left 0.3s;
+  left: 0;
+}
+
+.button:hover {
+  left: -4px;
 }
 
 @media(max-width: 1040px) {

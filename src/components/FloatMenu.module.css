@@ -1,0 +1,90 @@
+.menu {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    cursor: pointer;
+    padding: 20px;
+    width: 100%;
+    background: #fff;
+    transform: translateY(187px);
+    transition: transform 0.2s;
+}
+
+.option {
+    transition: transform 0.2s;
+    margin-right: 10px;
+}
+
+.option:hover {
+    transform: scale(1.2);
+}
+
+.flag {
+    composes: option;
+    width: 30px;
+    border-radius: 4px;
+}
+
+.vader {
+    composes: option;
+    width: 34px;
+    height: 30px;
+}
+
+.trooper {
+    composes: option;
+    width: 28px;
+}
+
+.title {
+    padding-right: 20px;
+}
+
+.subtitle {
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.avatar {
+    cursor: pointer;
+    position: absolute;
+    top: -37px;
+    z-index: 999999999;
+    width: 50px;
+    right: 20px;
+    transition: top .2s;
+}
+
+.avatar:hover {
+    top: -55px;
+}
+
+.openSettings {
+    visibility: hidden;
+}
+
+.openSettings:checked ~ .menu {
+    transform: translateY(0);
+}
+
+.openSettings:checked ~ .menu .avatar:hover {
+    top: -37px;
+}
+
+/*@TODO reutilizar isso*/
+.container {
+    max-width: 780px;
+    margin: 0 auto;
+    color: #000;
+}
+
+
+@media(max-width: 780px) {
+    .menu {
+        transform: translateY(202px);
+    }
+
+    .avatar {
+        right: 10px;
+    }
+}

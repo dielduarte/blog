@@ -3,6 +3,7 @@ import React from "react"
 import BackButton from "./BackButton"
 
 import styles from "./layout.module.css"
+import FloatMenu from "./FloatMenu"
 
 class Layout extends React.Component {
   render() {
@@ -16,9 +17,13 @@ class Layout extends React.Component {
           isExternal={isRootPath}
         />
         <header>
-          <h1 className={styles.title}>{isRootPath ? config.title : title}</h1>
+          <h1 className={styles.title}>
+            {isRootPath ? config.title : title}
+          </h1>
         </header>
         <main>{children}</main>
+
+        <FloatMenu />
       </div>
     )
   }
