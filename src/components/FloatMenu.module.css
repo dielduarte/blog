@@ -1,13 +1,16 @@
 .menu {
     position: fixed;
-    bottom: 0;
+    bottom: -1px;
     right: 0;
     cursor: pointer;
     padding: 20px;
     width: 100%;
     background: #fff;
     transform: translateY(187px);
-    transition: transform 0.2s;
+    color: #22272c;
+    transition: transform 0.2s,
+                background 0.2s,
+                color 0.2s;
 }
 
 .option {
@@ -71,13 +74,10 @@
     top: -37px;
 }
 
-/*@TODO reutilizar isso*/
-.container {
-    max-width: 780px;
-    margin: 0 auto;
-    color: #000;
+body:global(.light-theme) .menu {
+    background: #22272c;
+    color: #fff;
 }
-
 
 @media(max-width: 780px) {
     .menu {

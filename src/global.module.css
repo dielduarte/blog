@@ -1,0 +1,28 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Press Start 2P', cursive;
+}
+
+body {
+    background: #22272c;
+    color: #fff;
+
+    transition: background .2s, color .2s;
+}
+
+body:global(.light-theme) {
+    color: #22272c;
+    background: #fff;
+}
+
+.container {
+    max-width: 780px;
+    margin: 0 auto;
+}
+
+.prefetchLink {
+    visibility: hidden;
+    font-size: 0;
+}

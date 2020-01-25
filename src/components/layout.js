@@ -1,36 +1,38 @@
-import React from "react"
+import React, { useContext, useLayoutEffect, useMemo } from "react"
 
 import BackButton from "./BackButton"
-
 import styles from "./layout.module.css"
-import FloatMenu from "./FloatMenu"
+import globalStyles from '../global.module.css'
 
-class Layout extends React.Component {
-  render() {
-    const { location, title, children, config, siteUrl, languageLink } = this.props
-    const isRootPath = location.pathname === config.rootPath
+import Context from "../context"
 
-    return (
-      <div className={styles.container}>
-        <BackButton
-          to={isRootPath ? siteUrl : config.rootPath}
-          isExternal={isRootPath}
-        />
-        <header>
-          <h1 className={styles.title}>
-            {isRootPath ? config.title : title}
-          </h1>
-        </header>
-        <main>{children}</main>
 
-        <FloatMenu
-          location={location.pathname}
-          isRootPath={isRootPath}
-          languageLink={languageLink}
-        />
-      </div>
-    )
-  }
+const Layout = (props) => {
+  const { location, title, children, config, siteUrl, languageLink } = props
+  const { setDynamicState } = useContext(Context)
+  const isRootPath = useMemo(
+    () => location.pathname === config.rootPath,
+    [location, config]
+  )
+
+  useLayoutEffect(() => {
+    setDynamicState({ isRootPath, languageLink })
+  }, [isRootPath, languageLink, setDynamicState])
+
+  return (
+    <div className={globalStyles.container}>
+      <BackButton
+        to={isRootPath ? siteUrl : config.rootPath}
+        isExternal={isRootPath}
+      />
+      <header>
+        <h1 className={styles.title}>
+          {isRootPath ? config.title : title}
+        </h1>
+      </header>
+      <main>{children}</main>
+    </div>
+  )
 }
 
 export default Layout

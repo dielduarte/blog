@@ -5,7 +5,7 @@ import SEO from "../components/seo"
 
 import styles from "./PostList.module.css"
 
-function PostList({ location, title, siteUrl, posts, config }) {
+function PostList({ posts }) {
   return (
     <>
       <SEO title="All posts" />

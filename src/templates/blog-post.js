@@ -1,9 +1,10 @@
 import React from "react"
-import { graphql } from "gatsby"
+import { graphql, Link } from "gatsby"
 import styles from "./blog-post.module.css"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+import globalStyles from '../global.module.css'
 
 class BlogPostTemplate extends React.Component {
   render() {
@@ -17,6 +18,12 @@ class BlogPostTemplate extends React.Component {
         config={config}
         languageLink={post.frontmatter.languageLink}
       >
+        <Link
+          to={post.frontmatter.languageLink}
+          className={globalStyles.prefetchLink}
+        >
+          {post.frontmatter.languageLink}
+        </Link>
         <SEO
           title={post.frontmatter.title}
           description={post.frontmatter.description || post.excerpt}

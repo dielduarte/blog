@@ -1,22 +1,26 @@
 .button {
-  font-size: 18px;
-  color: #fff;
-  background: transparent;
-  border: none;
-  margin-top: 20px;
-  text-decoration: none;
-  display: block;
-  position: relative;
-  transition: left 0.3s;
-  left: 0;
+    font-size: 18px;
+    color: #fff;
+    background: transparent;
+    border: none;
+    margin-top: 20px;
+    text-decoration: none;
+    display: block;
+    position: relative;
+    transition: left 0.3s;
+    left: 0;
 }
 
 .button:hover {
-  left: -4px;
+    left: -4px;
+}
+
+body:global(.light-theme) .button {
+    color: #22272c;
 }
 
 @media(max-width: 1040px) {
-  .button {
-    padding-left: 12px;
-  }
+    .button {
+        padding-left: 12px;
+    }
 }

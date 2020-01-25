@@ -1,20 +1,3 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Press Start 2P', cursive;
-}
-
-body {
-  background: #22272c;
-  color: #fff;
-}
-
-.container {
-  max-width: 780px;
-  margin: 0 auto;
-}
-
 .title {
   font-size: 24px;
   text-align: center;

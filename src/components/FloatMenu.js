@@ -1,15 +1,19 @@
-import React from 'react'
+import React, { useContext } from "react"
 import { navigate } from "gatsby"
 
 import styles from "./FloatMenu.module.css"
+import globalStyles from '../global.module.css'
+import Context from "../context"
 
-function FloatMenu({ location, isRootPath, languageLink }) {
+function FloatMenu() {
+  const context = useContext(Context)
+
   const getHandleSetQuery = (desiredLang) => () => {
-    if(isRootPath) {
+    if(context.isRootPath) {
       return navigate(desiredLang === 'pt-br' ? '/pt-br' : '/')
     }
 
-    return navigate(languageLink)
+    return navigate(context.languageLink)
   }
 
   const setPtBr = getHandleSetQuery('pt-br')
@@ -25,7 +29,7 @@ function FloatMenu({ location, isRootPath, languageLink }) {
           className={styles.avatar}
         />
       </label>
-      <div className={styles.container}>
+      <div className={globalStyles.container}>
         <h4 className={styles.title}>Hey, nice to see you here!</h4>
 
         <h6 className={styles.subtitle}>Choose blog language</h6>
@@ -48,11 +52,13 @@ function FloatMenu({ location, isRootPath, languageLink }) {
           alt="Dark Theme"
           src={'/images/vader.png'}
           className={styles.vader}
+          onClick={() => context.setDarkTheme(true)}
         />
         <img
           alt="Light Theme"
           src={'/images/tropper.png'}
           className={styles.trooper}
+          onClick={() => context.setDarkTheme(false)}
         />
       </div>
     </section>
