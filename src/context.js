@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useRef, useState } from "react"
+import React, { useCallback, useLayoutEffect, useRef, useState } from "react"
 
 const defaultState = {
   isDark: false,
@@ -30,17 +30,16 @@ const ContextProvider = ({ children })  => {
     setState(prev => ({ ...prev, isRootPath, languageLink }))
   }, [])
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     const isDark = JSON.parse(localStorage.getItem("isDark"))
     if (isDark) {
       setState(prev => ({ ...prev, isDark }))
     } else if (supportsDarkMode()) {
-      console.log('passa aqui')
       setState(prev => ({ ...prev, isDark: true }))
     }
   }, [])
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     if(state.isDark) {
       bodyRef.current.classList.remove('light-theme')
     } else if(!bodyRef.current.classList.contains('light-theme')) {
