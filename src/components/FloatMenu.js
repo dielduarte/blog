@@ -10,7 +10,7 @@ function FloatMenu() {
 
   const getHandleSetQuery = (desiredLang) => () => {
     if(context.isRootPath) {
-      return navigate(desiredLang === 'pt-br' ? '/pt-br' : '/')
+      return navigate(desiredLang === 'pt-br' ? 'pt-br' : '/')
     }
 
     return navigate(context.languageLink)
