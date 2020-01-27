@@ -38,7 +38,9 @@ class BlogPostTemplate extends React.Component {
           dangerouslySetInnerHTML={{ __html: post.html }}
           className={styles.content}
         />
-        <Disqus config={disqusConfig} />
+        <section className={styles.disqusContainer}>
+          <Disqus config={disqusConfig} />
+        </section>
       </Layout>
     )
   }

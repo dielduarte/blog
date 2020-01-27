@@ -95,3 +95,11 @@
 @media(max-width: 1040px) {
   .content { padding: 1.4em; }
 }
+
+.disqus-container {
+  padding: 0;
+}
+
+@media(max-width: 780px) {
+  .disqus-container { padding: 0 1.4em; }
+}
