@@ -25,7 +25,7 @@ function FloatMenu() {
       <label htmlFor="openSettings">
         <img
           alt="brazil flag"
-          src={'/images/avatar.png'}
+          src={'/blog/images/avatar.png'}
           className={styles.avatar}
         />
       </label>
@@ -35,13 +35,13 @@ function FloatMenu() {
         <h6 className={styles.subtitle}>Choose blog language</h6>
         <img
           alt="USA flag"
-          src={'/images/flags/USA.png'}
+          src={'/blog/images/flags/USA.png'}
           className={styles.flag}
           onClick={setEn}
         />
         <img
           alt="brazil flag"
-          src={'/images/flags/brazil.png'}
+          src={'/blog/images/flags/brazil.png'}
           className={styles.flag}
           onClick={setPtBr}
         />
@@ -50,13 +50,13 @@ function FloatMenu() {
 
         <img
           alt="Dark Theme"
-          src={'/images/vader.png'}
+          src={'/blog/images/vader.png'}
           className={styles.vader}
           onClick={() => context.setDarkTheme(true)}
         />
         <img
           alt="Light Theme"
-          src={'/images/tropper.png'}
+          src={'/blog/images/tropper.png'}
           className={styles.trooper}
           onClick={() => context.setDarkTheme(false)}
         />
