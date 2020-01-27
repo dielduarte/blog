@@ -1,6 +1,7 @@
 import React from "react"
 import { graphql, Link } from "gatsby"
 import styles from "./blog-post.module.css"
+import { Disqus } from 'gatsby-plugin-disqus'
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
@@ -10,6 +11,11 @@ class BlogPostTemplate extends React.Component {
   render() {
     const { markdownRemark: post, site } = this.props.data
     const config = site.siteMetadata[post.frontmatter.languageKey]
+    let disqusConfig = {
+      url: `${site.siteMetadata.siteUrl+window.location.pathname}`,
+      identifier: post.id,
+      title: post.frontmatter.title,
+    }
 
     return (
       <Layout
@@ -32,6 +38,7 @@ class BlogPostTemplate extends React.Component {
           dangerouslySetInnerHTML={{ __html: post.html }}
           className={styles.content}
         />
+        <Disqus config={disqusConfig} />
       </Layout>
     )
   }

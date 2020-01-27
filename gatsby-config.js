@@ -95,6 +95,12 @@ module.exports = {
         ],
       },
     },
-    "gatsby-plugin-remove-serviceworker"
+    "gatsby-plugin-remove-serviceworker",
+    {
+      resolve: `gatsby-plugin-disqus`,
+      options: {
+        shortname: `dielduarte`
+      }
+    },
   ],
 }
