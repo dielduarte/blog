@@ -12,7 +12,7 @@ class BlogPostTemplate extends React.Component {
     const { markdownRemark: post, site } = this.props.data
     const config = site.siteMetadata[post.frontmatter.languageKey]
     let disqusConfig = {
-      url: `${site.siteMetadata.siteUrl+window.location.pathname}`,
+      url: `${site.siteMetadata.siteUrl+post.fields.slug}`,
       identifier: post.id,
       title: post.frontmatter.title,
     }
@@ -67,6 +67,9 @@ export const pageQuery = graphql`
       id
       excerpt(pruneLength: 160)
       html
+      fields {
+          slug
+      }
       frontmatter {
         title
         date(formatString: "MMMM DD, YYYY")

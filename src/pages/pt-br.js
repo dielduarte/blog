@@ -1,4 +1,6 @@
-export { default } from "../components/BlogIndex"
+import BlogIndex from '../components/BlogIndex'
+
+export default BlogIndex
 
 export const pageQuery = graphql`
   query {
