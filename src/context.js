@@ -1,7 +1,18 @@
 import React, { useCallback, useLayoutEffect, useRef, useState } from "react"
 
+
+const supportsDarkMode = () =>
+  window.matchMedia("(prefers-color-scheme: dark)").matches === true
+
+function getIsDark() {
+  const dataFromLocalStorage = JSON.parse(localStorage.getItem("isDark"))
+  return dataFromLocalStorage !== null
+    ? dataFromLocalStorage
+    : supportsDarkMode()
+}
+
 const defaultState = {
-  isDark: false,
+  isDark: getIsDark(),
   setDarkTheme: () => {},
   setDynamicState: () => {},
   isRootPath: true,
@@ -10,13 +21,11 @@ const defaultState = {
 
 const Context = React.createContext(defaultState)
 
-const supportsDarkMode = () =>
-  window.matchMedia("(prefers-color-scheme: dark)").matches === true
 
 const ContextProvider = ({ children })  => {
   const bodyRef = useRef(document.getElementsByTagName('body')[0])
   const [state, setState] = useState({
-    isDark: false,
+    isDark: getIsDark(),
     isRootPath: true,
     languageLink: ''
   })
@@ -28,15 +37,6 @@ const ContextProvider = ({ children })  => {
 
   const setDynamicState = useCallback(({ isRootPath, languageLink }) => {
     setState(prev => ({ ...prev, isRootPath, languageLink }))
-  }, [])
-
-  useLayoutEffect(() => {
-    const isDark = JSON.parse(localStorage.getItem("isDark"))
-    if (isDark) {
-      setState(prev => ({ ...prev, isDark }))
-    } else if (supportsDarkMode()) {
-      setState(prev => ({ ...prev, isDark: true }))
-    }
   }, [])
 
   useLayoutEffect(() => {
