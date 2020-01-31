@@ -9,11 +9,11 @@ module.exports = {
       twitter: `@diel_duarte`,
     },
     pt_br: {
-      rootPath: "/pt-br",
+      rootPath: "/blog/pt-br",
       title: "Bem vindo ao meu blog!",
     },
     en: {
-      rootPath: "/",
+      rootPath: "/blog/",
       title: "Welcome to my blog!",
     },
   },

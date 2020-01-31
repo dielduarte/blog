@@ -9,8 +9,9 @@ function FloatMenu() {
   const context = useContext(Context)
 
   const getHandleSetQuery = (desiredLang) => () => {
+    context.setLang(desiredLang)
     if(context.isRootPath) {
-      return navigate(desiredLang === 'pt-br' ? 'pt-br' : '/')
+      return navigate(desiredLang === 'pt-br' ? '/pt-br' : '/')
     }
 
     return navigate(context.languageLink)
@@ -24,7 +25,7 @@ function FloatMenu() {
     <section className={styles.menu}>
       <label htmlFor="openSettings">
         <img
-          alt="brazil flag"
+          alt="Avatar"
           src={'/blog/images/avatar.png'}
           className={styles.avatar}
         />
@@ -33,6 +34,7 @@ function FloatMenu() {
         <h4 className={styles.title}>Hey, nice to see you here!</h4>
 
         <h6 className={styles.subtitle}>Choose blog language</h6>
+
         <img
           alt="USA flag"
           src={'/blog/images/flags/USA.png'}
