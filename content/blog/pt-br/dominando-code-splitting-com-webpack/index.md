@@ -1,49 +1,47 @@
 ---
 title: Dominando code splitting com webpack
 date: "2019-07-17"
-description: let's talk about how Webpack can help us to code splitting and achieve the goal of better website performance.
+description: Vamos conversar sobre como Webpack pode ajudar no processo de code splitting para atingir a meta de um site mais performático.
 languageKey: en
 languageLink: en/mastering-code-splitting-with-webpack
 ---
 
-code splitting is a build time process that splits pieces of your code into async chunks, let's talk about how Webpack can help us to code split and achieve the goal of better website performance.
+Code Splitting é um processo em build time que quebra parte do seu código em pequenos pedaços que são requisitados de forma assíncrona, apenas quando necessário. Vamos conversar sobre como Webpack pode ajudar no processo de Code Splitting para atingir a meta de um site mais performático.
 
+<h2 class="subtitle--separator">Mas primeiro, como saber quando eu tenho que quebrar o meu código em pequenos pedaços (chunks)?</h2>
 
-<h2 class="subtitle--separator">But first, How to know when I have to split my code?</h2>
+Os processos mais caros quando falamos sobre renderizar um Website são os processos de download e parsing do Javascript e CSS. Sabendo desse fato, se nós não precisamos de uma parte específica do código no primeiro render, esse código é um ótimo candidato para ser quebrado em uma outra parte e ser baixado sobre demanda. 
 
-The most expensive part of rendering websites is about downloading, and parsing  Javascript and css. That said, if we don't need to render a specific piece of code on the first render, this code is a good candidate to split and be downloaded by demand, no secrets so far.
+O Google Chrome tem uma ótima ferramenta chamada `coverage` que nos mostra qual porcentagem do código baixado está ou não está sendo usado. Isso pode ser usado como uma métrica para seguir e saber o quanto do código baixado poderia ser quebrado em partes assíncronas.
 
-Google Chrome has a nice dev tool called `coverage` that shows what percentage of the code delivered it's being used. This might be used as a metric to follow and know how much code might be split and downloaded by demand. 
+Para usar essa ferramenta abra o dev tools do Chrome, `cmd/ctrl + p`, e digite `show coverage`:
 
-To use the coverage tool just open your dev tools, `cmd/ctrl + p`, and type `show coverage`:
+![imagem mostrando como acessar a janela coverage no dev tools do Chrome](/blog/images/coverage.png) 
 
-![image showing how to access coverage tab on chrome dev tools](/blog/images/coverage.png) 
+Uma vez que abrimos a opção coverage, clique no botão de reload e espere até que nosso site seja completamente carregado. Os resultados vão nos motrar o quanto do código carregado por arquivo está sendo usado. É maravilhoso! &#128525;
 
-then, on the coverage tab click on the reload button and wait until the website is reloaded, this will show you how much code you are using on that specific page per asset downloaded. It's AMAZING! &#128525;
+![imagem mostrando a tab coverage, onde nos podemos ver a lista de arquivos baixados e o quanto do código de cada arquivo está sendo usado.](/blog/images/result.png) 
 
-![image showing coverage tab, where we can see a list of assets downloaded and how much code is not being used in red.](/blog/images/result.png) 
+No exemplo abaixo, 46% do código entregue `não` está sendo usado, essa métrica também é relativa, dependende do tamanho do arquivo e de muitas outras variáveis. Então é sempre bom entender o contexto que estamos trabalhando quando estivermos usando essas ferramentas.
 
-In the example above, 46% of the code delivered is `not` being used! but that metric is also relative, depends on file size and many other variables, so the context/scenario is super important when using these tools.
+## Code splitting e webpack
 
+Com Webpack nos temos duas formas de trabalhar com Code Splitting, imports estáticos e dinâmicos. As duas formas usam [dynamic imports, uma feature do es2020](https://v8.dev/features/dynamic-import)
 
-## Code splitting and webpack
+### Imports estáticos
 
-With webpack we have two ways to work with code splitting, static and "dynamic" imports, both using [dynamic imports es2020 feature](https://v8.dev/features/dynamic-import)
+- É bom para ser usado quanto estivermos importando bibliotecas/módulos de Javascript pesados.
+- Qualquer parte do código que chamamos de temporal, ou seja, coisas que não são vísiveis todo o tempo na sua página, exemplos: tooltips, modais/alertas.
+- Rotas.
 
-### Static import
-
-- Good to use when importing heavy javascript libraries/modules
-- Anything temporal - things that aren't visible all the time on your page, tooltip, modal/dialog and even the rest of the page that comes only on scroll could be considered temporal
-- Routes
-
-To use static imports on your code just do: 
+Para usar imports estáticos no seu código, é muito simples: 
 
 ```js
 import('path/to/myModule.js')
   .then((module) => {...})
 ```
 
-Or, even better, making a function to import the module when necessary, the import of the file itself is made just one time, then is cached and the next time calling the function the module is returned instantly, e.g:
+Ou ainda melhor, criando uma função que importa o módulo quando necessário. O import do arquivo é feito apenas uma vez, depois da primeira é cacheado e na próxima vez que usar a função o módulo é retornado instantaneamente, exemplo:
 
 ```js
 const getModule = () ⇒ import('path/to/myModule.js')
@@ -52,11 +50,11 @@ getModule()
   .then(module => {...})
 ```
 
-### Dynamic import
+### Imports Dinamicos
 
-"Dynamic" imports aren't really dynamic since they are made at build time. Using dynamic imports it's like saying to Webpack: Hey Webpack, please do all possibilities of chunks in this specific path at build time. So in this way, we can pass the chunk file that we wanna import using variables which makes this process kinda dynamic.
+Imports dinâmicos não são de verdade dinâmicos, porque eles acontecem em build time. Ao usar imports dinâmicos estamos dizendo para o Webpack: Ei Webpack, por favor, crie todos os chunks possíveis para o caminho que eu estou te passando, seja uma pasta, ou várias em build time. Dessa forma nos conseguimos usar variáveis o que torna esse processo de import "dinâmico".
 
-Considering we have a folder of themes like:
+Vamos considerar que nós temos uma pasta de temas, ex:
 
 ```js
 themes
@@ -64,7 +62,7 @@ themes
   └── light.js
 ```
 
-As an example we can do like:
+Como exemplo nós poderiamos importar os temas assim:
 
 ```js
 const getTheme = (theme) ⇒ import(`path/to/themes/${theme}`)
@@ -73,19 +71,18 @@ getTheme('dark')
   .then(theme => {...})
 ```
 
-This way webpack will create chunks for each theme file inside the themes folder, this technique is called `ContextModule` into webpack code. 
+Dessa forma o Webpack vai criar todos os possíveis chunks em build time para cada tema dentro da pasta `themes`, essa técnica é chamada de `ContextModule` dentro do código do Webpack.
 
-## Magic comments
+## Comentários Mágicos
 
 ### webpackChunkName
 
 ```js
 import(/* webpackChunkName: "my-chunk-name" */ 'path/to/myModule.js')
 ```
+Por default o Webpack cria os nomes dos chunks seguindo uma ordem numérica, 1.js, 2.js, 3.js, o que torna o processo de reconhecer quais arquivos foram importados difícil. Usando `webpackChunkName` nós podemos renomear o chunk, é importante lembrar que para esse comentário mágico funcionar nós devemos estar usando `output.chunkFileName: [name].whateverDoYouWantHere.js` no arquivo de configuração do Webpack.
 
-By default webpack creates chunk names following a numeral order, 1.js, 2.js, 3.js which makes the process of debugging harder to recognize which file was imported. using `webpackChunkName` we can rename the chunk file, it's important to remember that for this magic comment work we should be using the config `output.chunkFileName: [name].whateverDoYouWantHere.js` on webpack.config file.
-
-this is only helpful on dev mode, so we can do like:
+Isso é útil apenas no modo de desenvolvimento, então podemos fazer algo do tipo ao importar o arquivo:
 
 ```js
 if(process.NODE_ENV === 'development') {
@@ -96,7 +93,7 @@ if(process.NODE_ENV === 'development') {
 
 ```
 
-The `if` part will be removed if the build is running in production mode, and the `else` part if in dev mode. This is known as dead-code elimination, tools like Uglify.js and others do that to reduce bundle size.
+O `if` vai ser removido se o build estiver sendo rodado em modo de produção, e o `else` se estiver rodando em modo de desenvolvimento. Isso é conhecido como `dead-code elimination` ou em pt-br eliminação do código morto, ferramentas como Uglify.js e outras usam isso para reduzir o tamanho do arquivo final.
 
 ### webpackMode
 
@@ -104,14 +101,14 @@ The `if` part will be removed if the build is running in production mode, and th
 import(/* webpackMode: "lazy" */ `path/to/themes/${theme}`)
 ```
 
-the magic comment webpackMode has four types of value:
+O comentário mágico `webpackMode` pode receber 4 tipos de valores:
 
-- lazy: generate chunks for each dynamic imported module, perfect choice to be used in production mode.
-- lazy-once: generate a single chunk that can satisfy all calls to import statement, perfect  choice to dev mode reducing the "bundling" time.
-- eager: generates no extra chunk, all modules are included in the current chunk and no additional network requests are made. 
-- weak: this is useful for universal rendering when required chunks are always manually served in initial requests, a Promise is still returned, but only successfully resolves if the chunks are already with the client. If the module is not available, the Promise is rejected. A network request will never be performed
+- lazy: gera um chunk para cada arquivo importado dinamicamente, melhor opção para ser usado em produção.
+- lazy-once: gera um chunk apenas que pode satisfazer a condição do import dinâmico, melhor opção para o modo de desenvolvimento reduzindo o tempo de de gerar os arquivos finais do Webpack.
+- eager: não gera nenhum chunk extra, todos os módulos são gerados em apenas um arquivo e nenhum request extra é feito.
+- weak: útil para universal rendering / ou server side rendering, onde os arquivos são servidos manualmente no primeiro render. O que acontece é que ao requisitar um módulo uma promisse é sempre retornada, mas essa promisse só retorna com sucesso se requisitada pelo client side. Um novo request nunca é feito, pois os arquivos já estão no client pois foram servidos pelo servidor.
 
-### Prefetch and Preload
+### Prefetch e Preload
 
 ```js
 import(/* webpackPrefetch: true */ `path/to/themes/${theme}`)
@@ -119,6 +116,7 @@ import(/* webpackPrefetch: true */ `path/to/themes/${theme}`)
 import(/* webpackLoad: true */ `path/to/themes/${theme}`)
 ```
 
-both comments above will create a link tag with `rel=prefetch` or `rel=preload` automatically for you, prefetching or preloading your chunks depends on the situation. if you don't know what prefetch and preload links do, I highly recommend you to read that post [Preload, Prefetch And Priorities in Chrome](https://medium.com/reloading/preload-prefetch-and-priorities-in-chrome-776165961bbf).
+Os dois comentários mágicos, irão criar uma tag link com `rel=prefetch` ou `rel=preload` automaticamente para você fazer o prefetching ou preloading dos seus chunks dependendo da implementação. Se você não sabe o que prefetch e preload links fazem, eu recomendo
+a leitura do post [Preload, Prefetch And Priorities in Chrome](https://medium.com/reloading/preload-prefetch-and-priorities-in-chrome-776165961bbf).
 
-This were my notes of [Web performance with webpack](https://frontendmasters.com/courses/performance-webpack/) course, I hope you have learned something new today, see you next time! ❤️
+Essas foram minhas anotações do curso [Web performance with webpack](https://frontendmasters.com/courses/performance-webpack/). Espero que você tenha aprendido alguma coisa nova hoje, te vejo no próximo post! ❤️

@@ -27,6 +27,7 @@
   font-size: 13px;
   margin-bottom: 20px;
   line-height: 1.9em;
+  min-height: 48px;
 }
 
 .description {
