@@ -52,7 +52,7 @@ Todos esses são problemas que você tem que enfrentar ao trabalhar remoto se vo
 
 Quando você começa a trabalhar remoto você vai ficar muito mais tempo na sua casa do que antes, isso vai te forçar a ficar isolado do resto do mundo. É importante que você tenha amigos, saia para almoçar/jantar, conheça novas pessoas indo em meetups, conferências e pratique exercícios físicos. Resumindo, SAIA DE CASA, converse com pessoas, fique mais tempo com sua família e amigos. Não fique isolado do resto do mundo.
 
-<h3>FOMO ou sensação de estar perdendo algo</h3>
+<h3>FOMO ou medo de estar perdendo algo</h3>
 
 Eu não posso te ajudar muito com isso, porque eu continuo aprendendo como lidar com isso. E isso é um grande problema para muitas pessoas que trabalham remotamente. A melhor coisa a se fazer é dar o seu 100% enquanto você está trabalhando e simplesmente ignorar totalmente quando você está offline. 
 

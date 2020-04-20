@@ -54,7 +54,7 @@ When you start working remotely, you will spend more time in your house than bef
 
 <h3>FOMO</h3>
 
-I can't help you a lot with FOMO (feeling of missing out), ‘cause I'm still learning how to deal with it. And that's a huge problem for me, and other remote workers as well. The best stuff to do is give 100% of you when you are working and just ignore it totally when you are off. Again, almost 98% of things that happen aren’t urgent, and I need to highly recommend to you the book [it doesn't have to be crazy at work](https://www.amazon.com/Doesnt-Have-Be-Crazy-Work/dp/0062874780/ref=sr_1_1?crid=29HZM51PVO126&keywords=it+doesn%27t+have+to+be+crazy+at+work&qid=1579489696&sprefix=it+doesn%2Caps%2C161&sr=8-1) to go deeper on these techniques to keep sanity at work, remotely or not.
+I can't help you a lot with FOMO (fear of missing out), ‘cause I'm still learning how to deal with it. And that's a huge problem for me, and other remote workers as well. The best stuff to do is give 100% of you when you are working and just ignore it totally when you are off. Again, almost 98% of things that happen aren’t urgent, and I need to highly recommend to you the book [it doesn't have to be crazy at work](https://www.amazon.com/Doesnt-Have-Be-Crazy-Work/dp/0062874780/ref=sr_1_1?crid=29HZM51PVO126&keywords=it+doesn%27t+have+to+be+crazy+at+work&qid=1579489696&sprefix=it+doesn%2Caps%2C161&sr=8-1) to go deeper on these techniques to keep sanity at work, remotely or not.
 
 <h3>Working more than 8 hours a day</h3>
 

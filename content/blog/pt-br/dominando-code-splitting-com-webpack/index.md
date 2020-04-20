@@ -2,7 +2,7 @@
 title: Dominando code splitting com webpack
 date: "2019-07-17"
 description: Vamos conversar sobre como Webpack pode ajudar no processo de code splitting para atingir a meta de um site mais performático.
-languageKey: en
+languageKey: pt_br
 languageLink: en/mastering-code-splitting-with-webpack
 ---
 
