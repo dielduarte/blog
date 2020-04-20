@@ -95,17 +95,16 @@ One of the main concerns as well is about visibility when people start working r
 
 <h2>Hero</h2>
 
-Hero is a valid concept if the team needs to work with either external or internal support. The concept 
+Hero is a valid concept if the team needs to work with either external or internal support. The concept
 means that by each time period determined by the team one person is the **hero,** this person is responsable to talk directly with the support team, analyze and organize backlog tasks related and work to solve the problems.
 
-With one person focused on it, the rest of the team can focus to work in new features or big refactors without interruptions to help the support team. It is used to better organize the team time between deep and shalow work, two othe important concepts to study.
+With one person focused on it, the rest of the team can focus to work in new features or big refactors without interruptions to help the support team. It is used to better organize the team time between deep and shalow work, two other important concepts to study.
 
-One of my references about remote work and deep work is the Doist company, where they aply these concepts. they have a nice blog and I highly recomend two posts about Deep Work and Hero + House Keeping.
+One of my references about remote work and deep work is the Doist company, where they apply these concepts. They have a nice blog and I highly recomend two posts about Deep Work and Hero + House Keeping.
 
 [https://doist.com/blog/heroes-housekeeping-days/](https://doist.com/blog/heroes-housekeeping-days/)
 
 [https://doist.com/blog/deep-work](https://doist.com/blog/deep-work/?utm_source=doist_blog&utm_medium=referral&utm_campaign=heroes_housekeeping_days)
-
 
 <h2>Calendar</h2>
 
