@@ -6,7 +6,7 @@ languageKey: en
 languageLink: pt-br/o-jeito-mais-simples-de-entender-functors
 ---
 
-I really like functional programming, and I've been studying some functional languages during the last years like Elm and now Reason just for fun, never did something serious like a production app in a company with these languages yet but I really like to bring some concepts of these languages to javascript. But somehow I always ended up frustrated with some functional techniques explanations,
+I really like functional programming, and have been studying it during last years, including elm and more recently Reason, just for fun. Never shipped some production ready app in these languages but really fancy the idea to bring some of their concepts to javascript. But somehow I always ended up frustrated with some functional techniques explanations,
 
 like functors.
 
