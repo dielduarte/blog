@@ -1,3 +1,7 @@
+.root {
+  max-width: 780px;
+}
+
 .content { 
   padding-bottom: 60px; 
   margin: 0 auto;

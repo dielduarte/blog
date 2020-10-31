@@ -6,8 +6,7 @@
 
 .post {
   min-width: 32%;
-  max-width: calc(50% - 20px);
-  margin-right: 20px;
+  max-width: calc(32% - 20px);
   background-color: #404447;
   padding: 20px 20px 30px 20px;
   box-shadow: none;
@@ -15,7 +14,7 @@
   position: relative;
   color: #fff;
   margin-bottom: 20px;
-  min-height: 180px;
+  min-height: 220px;
 }
 
 .post:hover {

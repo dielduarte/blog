@@ -8,7 +8,7 @@ import Context from "../context"
 
 
 const Layout = (props) => {
-  const { location, title, children, config, siteUrl, languageLink } = props
+  const { location, title, children, config, siteUrl, languageLink, className } = props
   const { setDynamicState, lang } = useContext(Context)
   const rootLink = useMemo(() => {
     return lang === 'en' ? '/' : '/pt-br'
@@ -24,7 +24,7 @@ const Layout = (props) => {
   }, [isRootPath, languageLink, setDynamicState])
 
   return (
-    <div className={globalStyles.container}>
+    <div className={`${globalStyles.container} ${className}`}>
       <BackButton
         to={isRootPath ? siteUrl : rootLink}
         isExternal={isRootPath}

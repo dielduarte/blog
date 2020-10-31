@@ -23,6 +23,7 @@ class BlogPostTemplate extends React.Component {
         title={post.frontmatter.title}
         config={config}
         languageLink={post.frontmatter.languageLink}
+        className={styles.root}
       >
         <Link
           to={post.frontmatter.languageLink}
