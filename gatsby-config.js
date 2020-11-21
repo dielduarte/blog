@@ -4,7 +4,7 @@ module.exports = {
     title: `Diel Duarte blog`,
     author: `Diel Duarte`,
     description: `Diel Duarte personal blog`,
-    siteUrl: `https://dielduarte.github.io`,
+    siteUrl: `https://dielduarte.dev`,
     social: {
       twitter: `@diel_duarte`,
     },
