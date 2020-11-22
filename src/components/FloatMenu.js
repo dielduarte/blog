@@ -35,33 +35,38 @@ function FloatMenu() {
 
         <h6 className={styles.subtitle}>Choose blog language</h6>
 
-        <img
-          alt="USA flag"
-          src={'/blog/images/flags/USA.png'}
-          className={styles.flag}
-          onClick={setEn}
-        />
-        <img
-          alt="brazil flag"
-          src={'/blog/images/flags/brazil.png'}
-          className={styles.flag}
-          onClick={setPtBr}
-        />
+        <button onClick={setEn} className={styles.option}>
+          <img
+            alt="USA flag"
+            src={'/blog/images/flags/USA.png'}
+            className={styles.flag}
+          />
+        </button>  
+    
+        <button onClick={setPtBr} className={styles.option}>
+          <img
+            alt="brazil flag"
+            src={'/blog/images/flags/brazil.png'}
+            className={styles.flag}
+          />
+        </button>
 
         <h6 className={styles.subtitle}>Choose blog theme</h6>
 
-        <img
-          alt="Dark Theme"
-          src={'/blog/images/vader.png'}
-          className={styles.vader}
-          onClick={() => context.setDarkTheme(true)}
-        />
-        <img
-          alt="Light Theme"
-          src={'/blog/images/tropper.png'}
-          className={styles.trooper}
-          onClick={() => context.setDarkTheme(false)}
-        />
+        <button onClick={() => context.setDarkTheme(true)} className={styles.option}>
+          <img
+            alt="Dark Theme"
+            src={'/blog/images/vader.png'}
+            className={styles.vader}
+          />
+        </button>
+        <button onClick={() => context.setDarkTheme(false)} className={styles.option}>
+          <img
+            alt="Light Theme"
+            src={'/blog/images/tropper.png'}
+            className={styles.trooper}
+          />
+        </button>
       </div>
     </section>
   </>;

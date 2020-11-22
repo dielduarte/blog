@@ -75,6 +75,7 @@ const ContextProvider = ({ children })  => {
     if(state.lang === 'pt-br' && window.location.pathname === '/blog/') {
       navigate('/pt-br')
     }
+  //eslint-disable-next-line react-hooks/exhaustive-deps  
   }, [])
 
   return (

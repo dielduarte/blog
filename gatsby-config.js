@@ -77,23 +77,15 @@ module.exports = {
     },
     `gatsby-plugin-react-helmet`,
     {
-      resolve: `gatsby-plugin-prefetch-google-fonts`,
+      resolve: `gatsby-plugin-google-fonts`,
       options: {
         fonts: [
-          {
-            family: `Press Start 2P`,
-            subsets: [`latin`],
-          },
-          {
-            family: `Roboto`,
-            subsets: [`latin`],
-          },
-          {
-            family: `Fira Code`,
-            subsets: [`latin`],
-          },
+          'Press Start 2P',
+          'Roboto',
+          'Fira Code'
         ],
-      },
+        display: 'swap'
+      }
     },
     "gatsby-plugin-remove-serviceworker",
     {

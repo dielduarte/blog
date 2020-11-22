@@ -16,26 +16,27 @@
 .option {
     transition: transform 0.2s;
     margin-right: 10px;
+    border: none;
+    background: transparent;
+    display: inline-block;
 }
 
 .option:hover {
+    cursor: pointer;
     transform: scale(1.2);
 }
 
 .flag {
-    composes: option;
     width: 30px;
     border-radius: 4px;
 }
 
 .vader {
-    composes: option;
     width: 34px;
     height: 30px;
 }
 
 .trooper {
-    composes: option;
     width: 28px;
 }
 
