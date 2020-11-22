@@ -91,7 +91,7 @@
   margin: 40px 0 40px 18px;
 }
 
-.content img {
+.content img, .content video {
   max-width: 100%;
   object-fit: cover;
   display: block;

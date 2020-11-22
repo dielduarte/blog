@@ -15,7 +15,7 @@ const Layout = (props) => {
   }, [lang])
 
   const isRootPath = useMemo(
-    () => location.pathname === config.rootPath,
+    () => location.pathname === config?.rootPath,
     [location, config]
   )
 
