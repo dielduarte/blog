@@ -14,7 +14,7 @@ Era uma vez um Front-end que não conhecia State Charts e tinha uma tarefa muito
 
 `salvando`: No lugar dos ícones de editar/salvar mostramos um loading sinalizando que alguma ação assíncrona está acontecendo, nesse caso, estamos salvando o novo valor de nome.
 
-![imagem mostrando o component de input e seus estados.](/images/web-development-with-state-charts-intro/image-1.jpg) 
+![imagem mostrando o component de input e seus estados.](/blog/images/web-development-with-state-charts-intro/image-1.jpg) 
 
 <h2 class="subtitle--separator"></h2>
 
@@ -35,7 +35,7 @@ function onClick(isEditing, isSaving) {
 }
 ```
 
-![imagem mostrando o component de input em seu estado inicial e mostrando que o ícone editar possui um evento de on click.](/images/web-development-with-state-charts-intro/image-2.jpg) 
+![imagem mostrando o component de input em seu estado inicial e mostrando que o ícone editar possui um evento de on click.](/blog/images/web-development-with-state-charts-intro/image-2.jpg) 
 
 Ao chegar no estado de edição e sabendo que o usuário poderia novamente clicar no ícone que dessa vez se transformava no ícone para salvar, o mesmo continuou sua implementação adicionando mais um trecho código na função de ***onClick***:
 
@@ -60,11 +60,11 @@ function onClick(isEditing, isSaving) {
 
 O trecho de código adicionado primeiro testa se o usuário está no estado de ***edição***, caso verdadeiro, faz o switch das variáveis para levar o usuário para o estado de ***salvando***, e logo em seguida faz um request na api para salvar o novo valor de nome. Ao receber um retorno da api, resetamos as duas variáveis boleanas para false, pois agora, o usuário não está editando e nem salvando um novo valor, o que supostamente levaria o usuário para o estado ***inicial***.
 
-![imagem mostrando o component de input saindo do esado de editando para salvando, e depois de salvando para inicial.](/images/web-development-with-state-charts-intro/image-3.png)
+![imagem mostrando o component de input saindo do esado de editando para salvando, e depois de salvando para inicial.](/blog/images/web-development-with-state-charts-intro/image-3.png)
 
 Não muito confiante na solução, deu a task como terminada e seguiu sua vida.
 
-![gif de um menino nerd dando joinha.](/images/web-development-with-state-charts-intro/gif-1.gif)
+![gif de um menino nerd dando joinha.](/blog/images/web-development-with-state-charts-intro/gif-1.gif)
 
 <h2 class="subtitle--separator"></h2>
 
@@ -110,13 +110,13 @@ function onClick(isEditing, isSaving, isError) {
 Task concluida novamente. 
 Desconfortável com a solução final, foi pesquisar. Afinal, qual o problema com variáveis boleanas? 
 
-![imagem mostrando que podemos ter 8 variações usando 3 variáveis booleanas.](/images/web-development-with-state-charts-intro/image-4.png)
+![imagem mostrando que podemos ter 8 variações usando 3 variáveis booleanas.](/blog/images/web-development-with-state-charts-intro/image-4.png)
 
 O problema é que como na imagem acima, apesar de parecer inofensiva e óbvio, 1 variável boleana representa duas variações. O porém que ninguém lembra é que adicionando mais de uma variável, suas variações crescem exponencialmente. Com três variáveis boleanas como no exemplo acima, temos 8 variações.
 
 E aí, você acha que o código acima está preparado para lidar com 8 variações? A resposta infelizmente é: não. Seu código pode parecer simples e estar 99% vunerável a bugs.
 
-![meme de um homem tampando a placa do carro pela metada na primeira parte da foto, e na segunda parte tampando a outra.](/images/web-development-with-state-charts-intro/image-5.jpg)
+![meme de um homem tampando a placa do carro pela metada na primeira parte da foto, e na segunda parte tampando a outra.](/blog/images/web-development-with-state-charts-intro/image-5.jpg)
 
 Sabendo disso, podemos fazer diferente, podemos mapear todos os estados em uma constante:
 
@@ -185,7 +185,7 @@ Uma forma bem simples de representar FSM é usando um diagrama de transição de
 
 ***começando em um estado A ⇒ um vento X aconteceu ⇒ vamos para um estado B***
 
-![imagem mostrando um diagrama de transição de estados](/images/web-development-with-state-charts-intro/image-6.png)
+![imagem mostrando um diagrama de transição de estados](/blog/images/web-development-with-state-charts-intro/image-6.png)
 
 ### Finite State Machines? State charts? que confusão!
 
@@ -195,7 +195,7 @@ Como qualquer solução, Finite State Machines por sí só tem alguns problemas,
 
 State Charts por sua vez, apareceu pouco tempo depois adicionando soluções para que FSM fossem mais escalável a medida que o seu sistema fosse crescendo e ficando mais complexo. Além de novas ideias para tornar sua vida mais fácil.
 
-![imagem mostrando alguns dos conceitos que state charts contém, como activity, actions, paralel states entre outros...](/images/web-development-with-state-charts-intro/image-7.png)
+![imagem mostrando alguns dos conceitos que state charts contém, como activity, actions, paralel states entre outros...](/blog/images/web-development-with-state-charts-intro/image-7.png)
 
 Vale lembrar que a ideia foi apresentada há mais de 20 anos atrás, além de ser uma das bases da computação, é usada largamente em hardware embarcados e games! Com o aparecimento da lib Xstate que vamos descobrir no próximo post, o uso na web e pricipalmente usando Javascript está crescendo cada vez mais. Apenas para deixar um gostinho do que vamos ver no próximo artigo e também sobre uma das maiores vantagens de se usar State Charts que é o poder de vizualizar seu código, dá uma olhada como ficaria nosso codigo do componente de input usando Xstate:
 
