@@ -3,7 +3,7 @@ title: Dicas para times remotos
 date: "2020-04-19"
 description: Comunicação assíncrona, algumas ferramentas e dicas para manter uma equipe remota baseado em minha experiência e estudos.
 languageKey: pt_br
-languageLink: en/tips-for-remote-teams
+languageLink: /en/tips-for-remote-teams
 ---
 
 Esse é um material sobre comunicação assíncrona, algumas ferramentas e dicas para manter uma equipe remota baseado em minha experiência e estudos. Não estamos falando de uma ciência exata e recomendo testar as dicas por algumas semanas e avaliar os resultados com a ajuda de feedbacks da equipe. 

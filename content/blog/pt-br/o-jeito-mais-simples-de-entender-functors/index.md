@@ -3,7 +3,7 @@ title: O jeito mais simples de entender identity functors
 date: "2020-07-14"
 description: O jeito mais fácil de entender functors na minha humilde opinião é o conceito...
 languageKey: pt_br
-languageLink: en/the-easier-way-to-understand-functors
+languageLink: /en/the-easier-way-to-understand-functors
 ---
 
 Eu realmente gosto de linguagens funcionais, e eu tenho estudado algumas nos últimos anos como Elm e agora Reason apenas por diversão. Nunca fiz nada sério com essas linguagens como um App em produção em alguma empresa que trabalhei, mas eu gosto de trazer conceitos dessas linguagens para o Javascript. Meu problema é que de alguma forma eu sempre acabo frustrado quando estou estudando alguns dos conceitos de programação funcional,

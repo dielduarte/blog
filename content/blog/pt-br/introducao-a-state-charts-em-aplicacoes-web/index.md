@@ -3,7 +3,7 @@ title: Introdução a state charts em aplicações web
 date: "2020-11-01"
 description: Era uma vez um Front-end que não conhecia State Chartse e tinha uma tarefa muito "simples"...
 languageKey: pt_br
-languageLink: en/web-development-with-state-charts-intro
+languageLink: /en/web-development-with-state-charts-intro
 ---
 
 Era uma vez um Front-end que não conhecia State Charts e tinha uma tarefa muito "simples", construir um componente de input. O  "simples" input para edição de um nome tinha algumas variações de estados:
