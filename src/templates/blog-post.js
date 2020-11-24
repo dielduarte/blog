@@ -10,7 +10,6 @@ import globalStyles from '../global.module.css'
 class BlogPostTemplate extends React.Component {
   render() {
     const { markdownRemark: post, site } = this.props.data
-    console.log(post)
     const config = site.siteMetadata[post.frontmatter.languageKey]
     let disqusConfig = {
       url: `${site.siteMetadata.siteUrl+post.fields.slug}`,

@@ -56,8 +56,12 @@ function SEO({ description, lang, meta, title, socialImage }) {
           content: socialImage,
         },
         {
+          property: `twitter:image`,
+          content: socialImage,
+        },
+        {
           name: `twitter:card`,
-          content: `summary`,
+          content: metaDescription,
         },
         {
           name: `twitter:creator`,
