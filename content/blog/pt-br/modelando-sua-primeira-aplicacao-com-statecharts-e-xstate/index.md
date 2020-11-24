@@ -121,7 +121,7 @@ e no xstate/viz:
 
 ![imagem mostrando o resultado do codigo colado no xstate/viz](/blog/images/modeling-your-first-application-using-statecharts-and-xstate/image-4.png)
 
-Vizualizar seu código é muito interessante, no exemplo acima, podemos ver claramente qual evento leva a aplicação para outro estado e todos os fluxos possíveis. E inclusive furos no sistema, veja como o estado cant_retry nunca acontecerá pois nenhum evento força uma transição até ele 🤷‍♂️ mas calma, nós vamos chegar lá.
+Vizualizar seu código é muito interessante, no exemplo acima, podemos ver nitidamente qual evento leva a aplicação para outro estado e todos os fluxos possíveis. E inclusive furos no sistema, veja como o estado cant_retry nunca acontecerá pois nenhum evento força uma transição até ele 🤷‍♂️ mas calma, nós vamos chegar lá.
 
 ### Context
 
@@ -168,7 +168,7 @@ Perceba que nesse caso, não temos nenhuma alteração nos estados da aplicaçã
 
 ![imagem mostrando a aba state no xstate/viz](/blog/images/modeling-your-first-application-using-statecharts-and-xstate/image-5.png)
 
-### Trabalhando com ações assincronas 
+### Trabalhando com ações assíncronas 
 
 Em qualquer aplicação sempre teremos ações que são assíncronas e os resultados dessas ações podem ou não resultar em uma transição de estado. Usando Xstate chamamos isso de Services, e chamar um serviço é tão fácil e declarativo quanto qualquer outro conceito.
 
