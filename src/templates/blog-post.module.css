@@ -92,8 +92,10 @@
 }
 
 .content img {
-  width: 100%;
+  max-width: 100%;
   object-fit: cover;
+  display: block;
+  margin: 0 auto;
 }
 
 @media(max-width: 1040px) {
