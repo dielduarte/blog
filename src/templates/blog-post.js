@@ -10,6 +10,7 @@ import globalStyles from '../global.module.css'
 class BlogPostTemplate extends React.Component {
   render() {
     const { markdownRemark: post, site } = this.props.data
+    console.log(post)
     const config = site.siteMetadata[post.frontmatter.languageKey]
     let disqusConfig = {
       url: `${site.siteMetadata.siteUrl+post.fields.slug}`,
@@ -34,6 +35,7 @@ class BlogPostTemplate extends React.Component {
         <SEO
           title={post.frontmatter.title}
           description={post.frontmatter.description || post.excerpt}
+          socialImage={site.siteMetadata.siteUrl + post.frontmatter.socialImage}
         />
         <div
           dangerouslySetInnerHTML={{ __html: post.html }}
@@ -79,6 +81,7 @@ export const pageQuery = graphql`
         description
         languageKey
         languageLink
+        socialImage
       }
     }
   }
