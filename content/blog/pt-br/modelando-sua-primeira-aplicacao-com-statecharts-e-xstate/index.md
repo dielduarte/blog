@@ -24,7 +24,7 @@ Antes de começarmos a modelar uma aplicação, precisamos entender um pouco mai
 
 Uma das features mais legais do Xstate é poder vizualizar seu código, hoje vamos usar o xstate/viz que vai nos ajudar a criar nosso modelo. Antes de mais nada, abra o seguinte link: xstate/viz , você provavelmente verá uma página igual a da imagem abaixo, ele irá iniciar com uma fetch machine e com o código do exemplo do lado direito.
 
-![imagem mostrando o xstate/viz aberto com uma fetch machine.](/images/modeling-your-first-application-using-statecharts-and-xstate/image-1.png)
+![imagem mostrando o xstate/viz aberto com uma fetch machine.](/blog/images/modeling-your-first-application-using-statecharts-and-xstate/image-1.png)
 
 A primeira coisa que vamos fazer é atualizar o código no Xstate/Viz para o código abaixo e clicar em update:
 
@@ -40,7 +40,7 @@ const catsApp = Machine({
 
 O código acima é o código basico para iniciarmos uma nova State Machine, cada state machine recebe um id único, um estado inicial e claro, a lista de estados disponíveis. O resultado será:
 
-![imagem mostrando o resultado do codigo colado no xstate/viz](/images/modeling-your-first-application-using-statecharts-and-xstate/image-2.png)
+![imagem mostrando o resultado do codigo colado no xstate/viz](/blog/images/modeling-your-first-application-using-statecharts-and-xstate/image-2.png)
 
 A primeira coisa a se fazer é pensar em quais estados nossa aplicação pode ter, nesse exemplo vamos criar uma aplicação que, ao clicar em um botão busca de uma API uma imagem de um gatinho. A aplicação também tratará errors na api, habilitando o usuário a tentar novamente por 3 vezes consecutivas caso a API retorne errors.
 
@@ -71,7 +71,7 @@ const catsApp = Machine({
 
 E o resultado no xstate/viz:
 
-![imagem mostrando o resultado do codigo colado no xstate/viz](/images/modeling-your-first-application-using-statecharts-and-xstate/image-3.png)
+![imagem mostrando o resultado do codigo colado no xstate/viz](/blog/images/modeling-your-first-application-using-statecharts-and-xstate/image-3.png)
 
 Não se preocupe caso você esqueça de algum estado da primeira vez, aos poucos e com prática você vai pegando maldade e vai conseguir ser mais assertivo em quais estados sua aplicação ou seu componente deve ter. Alterar caso precise é mais simples do que parece, você pode usar o xstate/viz para te ajudar a vizualizar as mudanças e testar todos os fluxos possíveis.
 
@@ -119,7 +119,7 @@ const catsApp = Machine({
 
 e no xstate/viz:
 
-![imagem mostrando o resultado do codigo colado no xstate/viz](/images/modeling-your-first-application-using-statecharts-and-xstate/image-4.png)
+![imagem mostrando o resultado do codigo colado no xstate/viz](/blog/images/modeling-your-first-application-using-statecharts-and-xstate/image-4.png)
 
 Vizualizar seu código é muito interessante, no exemplo acima, podemos ver claramente qual evento leva a aplicação para outro estado e todos os fluxos possíveis. E inclusive furos no sistema, veja como o estado cant_retry nunca acontecerá pois nenhum evento força uma transição até ele 🤷‍♂️ mas calma, nós vamos chegar lá.
 
@@ -166,7 +166,7 @@ const catsApp = Machine({
 
 Perceba que nesse caso, não temos nenhuma alteração nos estados da aplicação. Mas no xstate/viz se você abrir a aba chamada `State` você pode ver que ele te mostra qual o estado atual da aplicação e qual os valores do contexto naquele momento.
 
-![imagem mostrando a aba state no xstate/viz](/images/modeling-your-first-application-using-statecharts-and-xstate/image-5.png)
+![imagem mostrando a aba state no xstate/viz](/blog/images/modeling-your-first-application-using-statecharts-and-xstate/image-5.png)
 
 ### Trabalhando com ações assincronas 
 
@@ -227,7 +227,7 @@ Vale lembrar que um serviço pode ser uma promisse, observables, callback ou out
 
 A vizualização do nosso código ficaria assim:
 
-![imagem mostrando o resultado do codigo colado no xstate/viz](/images/modeling-your-first-application-using-statecharts-and-xstate/image-6.png)
+![imagem mostrando o resultado do codigo colado no xstate/viz](/blog/images/modeling-your-first-application-using-statecharts-and-xstate/image-6.png)
 
 Da pra perceber que o viz coloca invoke / nome do serviço dentro da quadradinho que representa o estado atual e também o nome do serviço dentro de um parênteses nos eventos simbolizando que aquele evento está relacionado ao serviço chamado.
 
@@ -305,7 +305,7 @@ Uma action recebe por parâmetro, o contexto atual e um event, esse event nada m
 
 A vizualização do código ficaria assim:
 
-![imagem mostrando o resultado do codigo colado no xstate/viz](/images/modeling-your-first-application-using-statecharts-and-xstate/image-7.png)
+![imagem mostrando o resultado do codigo colado no xstate/viz](/blog/images/modeling-your-first-application-using-statecharts-and-xstate/image-7.png)
 
 Perceba que o Viz coloca uma lista de ações que acontecem quando um evento é disparado com do / nome da action bem abaixo da representação visual de um evento.
 
@@ -370,7 +370,7 @@ const catsApp = Machine({
 
 A vizualização do código ficaria assim:
 
-![imagem mostrando o resultado do codigo colado no xstate/viz](/images/modeling-your-first-application-using-statecharts-and-xstate/image-8.png)
+![imagem mostrando o resultado do codigo colado no xstate/viz](/blog/images/modeling-your-first-application-using-statecharts-and-xstate/image-8.png)
 
 Agora você já sabe reconhecer quando uma action é chamada apenas olhando a vizualização do código 🚀.
 
@@ -482,7 +482,7 @@ const catsApp = Machine({
   });
 ```
 
-![imagem mostrando o resultado do codigo colado no xstate/viz](/images/modeling-your-first-application-using-statecharts-and-xstate/image-9.png)
+![imagem mostrando o resultado do codigo colado no xstate/viz](/blog/images/modeling-your-first-application-using-statecharts-and-xstate/image-9.png)
 
 
 Perceba que agora nosso estado cant_retry tem uma ligação com o evento Retry, e nós temos dois eventos Retry que representam por ordem as branchs que declaramos. Perceba também que a primeira branch dentro do evento tem um array de guards e os nomes dessas condições, um guard fica verde em caso retorne true e vermelho em caso retorne false representando que aquele evento não vai acontecer.
