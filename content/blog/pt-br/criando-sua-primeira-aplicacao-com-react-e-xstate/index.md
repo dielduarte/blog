@@ -1,12 +1,13 @@
 ---
 title: Criando sua primeira aplicação com React e Xstate
 date: "2020-11-24"
-description: Nesse e nos próximos posts vamos contruir uma aplicação utilizando Statecharts e a ajuda da lib Xstate...
+description: Construindo sua primeira aplicação com react e xstate...
 languageKey: pt-br
 languageLink: /en/creating-your-first-application-with-react-and-xstate
+socialImage: /blog/images/creating-your-first-application-with-react-and-xstate/cats-app-machine.png
 ---
 
-Hoje vamos criar nossa primeira aplicação utilizando o nosso modelo do post anterior que você pode ler aqui. Nós iremos utilizar Snowpack, React e Xstate.
+Hoje vamos criar nossa primeira aplicação utilizando o nosso modelo do post anterior que você pode ler [aqui](/pt-br/modelando-sua-primeira-aplicacao-com-statecharts-e-xstate/). Nós iremos utilizar Snowpack, React e Xstate.
 
 Instalando dependências
 
@@ -130,7 +131,7 @@ export const AppMachine = Machine({
 ```
 
 
-Você também vai precisar ir no site thecatapi.com e gerar uma API key. Você deve substituir `sua-api-key` pelo valor real na linha 51. 
+Você também vai precisar ir no site [thecatapi.com](https://thecatapi.com) e gerar uma API key. Você deve substituir `sua-api-key` pelo valor real na linha 51. 
 
 Se você está confuso como a machine funciona ou não leu a série inteira volte no post modelando sua primeira aplicação onde montamos essa state machine do zero.
 
@@ -216,7 +217,7 @@ function App() {
       )}
 
       {current.matches('cant_retry') && (
-        <p>Não é possivel tentar novamente</p>
+        <p>Não é possível tentar novamente</p>
       )}
     </>
   );
@@ -230,7 +231,7 @@ Nossa que tanto de IF Diel, o que está acontecendo? hahaha o mais legal do Xsta
 
 Nossa aplicação está praticamente pronta, e agora vem a cereja do bolo. Já pensou em poder vizualizar seu código e sua aplicação no geral em realtime podendo ter certeza do que está acontecendo na sua aplicação naquele momento? E mais, podendo controlar a sua aplicação por essa representação visual da mesma?
 
-A poucas semanas a galera do Xstate lançou o xstate/inspect, que basicamente abre um debugger da sua aplicação representando a machine em tempo real e totalmente dinâmico, ou seja, você consegue controlar sua aplicação através desse debugger. Vamos ver como isso fucniona:
+A poucas semanas a galera do Xstate lançou o xstate/inspect, que basicamente abre um debugger da sua aplicação representando a machine em tempo real e totalmente dinâmico, ou seja, você consegue controlar sua aplicação através desse debugger. Vamos ver como isso funciona:
 
 Primeiro vamos instalar o inspect:
 
@@ -258,7 +259,7 @@ const [current, send] = useMachine(AppMachine, { devTools: true });
 Agora voltamos pra nossa aplicação e você vai ver que ao renderizá-la novamente o xstate/inspect vai abrir uma nova aba renderizando a sua machine em realtime e você pode tanto usar a sua aplicação e ver os resultados disso na aba do inspect quanto ao contrário, você pode enviar eventos do inspect para a sua aplicação.
 
 <video controls="true" allowfullscreen="true">
-    <source src="/images/creating-your-first-application-with-react-and-xstate/video-1.mp4" type="video/mp4">
+    <source src="/blog/images/creating-your-first-application-with-react-and-xstate/video-1.mp4" type="video/mp4">
   </video>
 
 ### Simulando API retornando erro.
@@ -277,7 +278,7 @@ Podemos ver também que nossa lógica de retry times funcionou, o usuário pode 
 
 
 <video controls="true" allowfullscreen="true">
-    <source src="/images/creating-your-first-application-with-react-and-xstate/video-2.mp4" type="video/mp4">
+    <source src="/blog/images/creating-your-first-application-with-react-and-xstate/video-2.mp4" type="video/mp4">
   </video>
 
 Por hoje é só pessoal!
