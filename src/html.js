@@ -12,6 +12,8 @@ export default function HTML(props) {
           content="width=device-width, initial-scale=1, shrink-to-fit=no"
         />
         <script src="https://fast.appcues.com/88539.js"></script>
+
+        <script src="https://dielduarte.dev/blog/onrouteupdate.js"></script>
         {props.headComponents}
       </head>
       <body {...props.bodyAttributes}>
