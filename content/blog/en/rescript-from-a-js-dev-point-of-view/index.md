@@ -21,7 +21,7 @@ Here's something for you: JS is the web language! JS is everywhere! and always b
 
 and why? because I don't want to stop using JS. If something super cool like Xstate appears or a new browser API, I'd like to still be able to use it on my Rescript code anyway, even if the language doesn't have official support for it. It needs to be easy to maintain and fast to create if needed.
 
-Let's say I'd like to use Lodash, waiting for comments: You don't need to use Lodash yada yada yada.. bleee, I bet it saved your ass MANY times and it is jus an example, anyway, everything you would need to do would be simply defining some types like you would do with TS if you want to have some type safety in your code. e.g:
+Let's say I'd like to use Lodash, waiting for comments: You don't need to use Lodash yada yada yada.. bleee, I bet it saved your ass MANY times and it is just an example, anyway, everything you would need to do would be simply defining some types like you would do with TS if you want to have some type safety in your code. e.g:
 
 We could create a `Lodash.res` definitions file:
 
