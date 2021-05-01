@@ -2,7 +2,7 @@
 <p><code class="language-text">inicial</code>: O input aparece desabilitado, o usuário pode então clicar no ícone de editar. </p>
 <p><code class="language-text">editando</code>: O input está habilitado para receber o novo valor de nome, o usuário pode então clicar no ícone de salvar.</p>
 <p><code class="language-text">salvando</code>: No lugar dos ícones de editar/salvar mostramos um loading sinalizando que alguma ação assíncrona está acontecendo, nesse caso, estamos salvando o novo valor de nome.</p>
-<p><img src="/blog/images/web-development-with-state-charts-intro/image-1.jpg" alt="imagem mostrando o component de input e seus estados."> </p>
+<p><img src="/blog/images/web-development-with-state-charts-intro/image-1.jpeg" alt="imagem mostrando o component de input e seus estados."> </p>
 <h2 class="subtitle--separator"></h2>
 <p>Nosso querido Front-end começou a implementação com duas variáveis boleanas:</p>
 <div class="gatsby-highlight" data-language="js"><pre class="language-js"><code class="language-js">isEditing <span class="token operator">=</span> <span class="token boolean">false</span>
@@ -13,7 +13,7 @@ isSaving <span class="token operator">=</span> <span class="token boolean">false
     isEditing <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
   <span class="token punctuation">}</span>
 <span class="token punctuation">}</span></code></pre></div>
-<p><img src="/blog/images/web-development-with-state-charts-intro/image-2.jpg" alt="imagem mostrando o component de input em seu estado inicial e mostrando que o ícone editar possui um evento de on click."> </p>
+<p><img src="/blog/images/web-development-with-state-charts-intro/image-2.jpeg" alt="imagem mostrando o component de input em seu estado inicial e mostrando que o ícone editar possui um evento de on click."> </p>
 <p>Ao chegar no estado de edição e sabendo que o usuário poderia novamente clicar no ícone que dessa vez se transformava no ícone para salvar, o mesmo continuou sua implementação adicionando mais um trecho código na função de <strong><em>onClick</em></strong>:</p>
 <div class="gatsby-highlight" data-language="js"><pre class="language-js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">onClick</span><span class="token punctuation">(</span><span class="token parameter">isEditing<span class="token punctuation">,</span> isSaving</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
   <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token operator">!</span>isEditing <span class="token operator">&amp;&amp;</span> <span class="token operator">!</span>isSaving<span class="token punctuation">)</span> <span class="token punctuation">{</span>
