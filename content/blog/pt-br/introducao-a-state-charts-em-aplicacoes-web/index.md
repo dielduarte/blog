@@ -15,7 +15,7 @@ Era uma vez um Front-end que não conhecia State Charts e tinha uma tarefa muito
 
 `salvando`: No lugar dos ícones de editar/salvar mostramos um loading sinalizando que alguma ação assíncrona está acontecendo, nesse caso, estamos salvando o novo valor de nome.
 
-![imagem mostrando o component de input e seus estados.](/blog/images/web-development-with-state-charts-intro/image-1.jpg) 
+![imagem mostrando o component de input e seus estados.](/blog/images/web-development-with-state-charts-intro/image-1.jpeg) 
 
 <h2 class="subtitle--separator"></h2>
 
@@ -36,7 +36,7 @@ function onClick(isEditing, isSaving) {
 }
 ```
 
-![imagem mostrando o component de input em seu estado inicial e mostrando que o ícone editar possui um evento de on click.](/blog/images/web-development-with-state-charts-intro/image-2.jpg) 
+![imagem mostrando o component de input em seu estado inicial e mostrando que o ícone editar possui um evento de on click.](/blog/images/web-development-with-state-charts-intro/image-2.jpeg) 
 
 Ao chegar no estado de edição e sabendo que o usuário poderia novamente clicar no ícone que dessa vez se transformava no ícone para salvar, o mesmo continuou sua implementação adicionando mais um trecho código na função de ***onClick***:
 
