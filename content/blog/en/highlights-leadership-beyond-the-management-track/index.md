@@ -122,17 +122,9 @@ p.s the highlights will be organized by chapter
 
 - If you’re looking for a Slack community, #staff-principal-engineering in the Rands Leadership Slack is a fairly lively room.
 
-Although I’ve found that many folks don’t read too many books, when I asked Staff engineers for their most valuable resources, they inevitably mentioned a personal mentor or a book. They had blog posts and tech talks they might mention related to a more specific problem, but they were most changed by this larger, more papery format. Some books which were recommended:
+- Although I’ve found that many folks don’t read too many books, when I asked Staff engineers for their most valuable resources, they inevitably mentioned a personal mentor or a book. They had blog posts and tech talks they might mention related to a more specific problem, but they were most changed by this larger, more papery format. Some books which were recommended: A Philosophy of Software Design by John Ousterhout.
 
-  - A Philosophy of Software Design by John Ousterhout.
-  - Accelerate: Building and Scaling High Performing Technology Organizations by Forsgren, Humble, and Kim 
-  - Becoming a Technical Leader: An Organic Problem-Solving Approach by Gerald Weinberg Building Evolutionary Architectures by Ford, Parsons, and Kua 
-  - Escaping the Build Trap: How Effective Product Management Creates Real Value by Melissa Perri 
-  - Good Strategy Bad Strategy: The Difference and Why it Matters by Richard Rumelt 
-  - High Output Management by Andy Grove The Manager’s Path: A Guide for Tech Leaders Navigating Growth and Change by Camille Fournier 
-  - The Mythical Man-Month by Fred Brooks The Phoenix Project by Kim, Behr, and Spafford. 
-  - The Passionate Programmer by Chad Fowler 
-  - The Pragmatic Programmer by Hunt and Thomas Resilient Management by Lara Hogan.
+- Accelerate: Building and Scaling High Performing Technology Organizations by Forsgren, Humble, and Kim Becoming a Technical Leader: An Organic Problem-Solving Approach by Gerald Weinberg Building Evolutionary Architectures by Ford, Parsons, and Kua Escaping the Build Trap: How Effective Product Management Creates Real Value by Melissa Perri Good Strategy Bad Strategy: The Difference and Why it Matters by Richard Rumelt High Output Management by Andy Grove The Manager’s Path: A Guide for Tech Leaders Navigating Growth and Change by Camille Fournier The Mythical Man-Month by Fred Brooks The Phoenix Project by Kim, Behr, and Spafford. The Passionate Programmer by Chad Fowler The Pragmatic Programmer by Hunt and Thomas Resilient Management by Lara Hogan.
 
 
 <h2 class="subtitle--separator">The end</h2>
